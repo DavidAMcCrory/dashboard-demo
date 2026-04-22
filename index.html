@@ -60,7 +60,7 @@
   }
   .header-left .period {
     font-size: 11px;
-    color: #3a5c78;
+    color: #a8c4d8;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 12px;
@@ -70,7 +70,7 @@
     border-left: 3px solid #4a90c4;
     padding: 10px 14px;
     font-size: 12px;
-    color: #2d4a62;
+    color: #c8daea;
     max-width: 680px;
     line-height: 1.6;
   }
@@ -82,7 +82,7 @@
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: #3a5c78;
+    color: #8daecb;
     margin-bottom: 8px;
   }
   .posture-badge {
@@ -100,7 +100,7 @@
   .posture-note {
     margin-top: 8px;
     font-size: 10px;
-    color: #3a5c78;
+    color: #8daecb;
     line-height: 1.5;
   }
 
@@ -404,12 +404,101 @@
     margin-bottom: 12px;
     font-style: italic;
   }
+
+  /* ── POSITIONING BANNER ── */
+  .positioning-banner {
+    background: #eef2f8;
+    border-bottom: 1px solid #c8d3e6;
+    padding: 6px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .positioning-banner .pos-main {
+    font-size: 11px;
+    color: #2a3f5e;
+    font-style: italic;
+  }
+  .positioning-banner .pos-context {
+    font-size: 10px;
+    color: #6a7e96;
+    text-align: right;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ── DATA CAVEAT ── */
+  .data-caveat {
+    display: block;
+    font-size: 10px;
+    color: #7a6a3a;
+    font-style: italic;
+    margin-top: 2px;
+  }
+  .kri-footnote {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    font-size: 10px;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  /* ── MANAGEMENT FOCUS ── */
+  .action-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 13px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    border-left: 3px solid;
+  }
+  .action-item.priority-high  { border-left-color: var(--red); }
+  .action-item.priority-amber { border-left-color: var(--amber); }
+  .action-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--slate-light);
+    min-width: 18px;
+    padding-top: 1px;
+  }
+  .action-body { flex: 1; }
+  .action-title {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--navy-mid);
+    margin-bottom: 2px;
+  }
+  .action-detail {
+    font-size: 11px;
+    color: var(--slate);
+    line-height: 1.5;
+  }
+  .action-owner {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
 </style>
 </head>
 <body>
 
+<div class="positioning-banner">
+  <span class="pos-main">Executive-level reporting framework integrating KRIs, control effectiveness, and audit findings to support ICFR oversight, audit follow-up, and remediation tracking.</span>
+  <span class="pos-context">Developed from experience building enterprise technology risk reporting within a large pension investment environment</span>
+</div>
+
+<header class="header">
   <div class="header-left">
-    <div class="period">Enterprise Technology Risk &nbsp;|&nbsp; Reporting Period: Q1 2026 &nbsp;|&nbsp; As at March 30, 2026;|&nbsp; David McCrory — Demo </div>
+    <div class="period">Enterprise Technology Risk &nbsp;|&nbsp; Reporting Period: Q1 2026 &nbsp;|&nbsp; As at March 30, 2026 &nbsp;|&nbsp; David A. McCrory</div>
     <h1>Enterprise Technology Risk Dashboard</h1>
     <div style="margin-top:12px;">
       <div class="exec-summary">
@@ -531,7 +620,7 @@
             <td><span class="badge red">Red</span></td>
           </tr>
           <tr>
-            <td>Failed control tests (automated &amp; manual)</td>
+            <td>Failed control tests (automated &amp; manual)<span class="data-caveat">&#9432; IT operations domain results pending final review — 3 test cases under re-assessment</span></td>
             <td><strong>9.4%</strong></td>
             <td>&lt; 7.0%</td>
             <td><span class="trend down">▼ Improving</span></td>
@@ -559,7 +648,7 @@
             <td><span class="badge green">Green</span></td>
           </tr>
           <tr>
-            <td>MFA adoption — privileged users</td>
+            <td>MFA adoption — privileged users<span class="data-caveat">&#9432; Privileged user population count under reconciliation — HR directory sync in progress</span></td>
             <td><strong>97.3%</strong></td>
             <td>&gt; 99.0%</td>
             <td><span class="trend down">▼ Improving</span></td>
@@ -567,6 +656,7 @@
           </tr>
         </tbody>
       </table>
+      <p class="kri-footnote">&#9432; Indicators marked with a caveat note are based on preliminary data. Final figures subject to confirmation by control owners. Dashboard refreshed as at March 30, 2026.</p>
     </div>
   </div>
 
@@ -774,6 +864,68 @@
 
       <div class="narrative">
         <strong>Risk function assessment:</strong> The volume of AI use case submissions has increased 40% quarter-over-quarter, outpacing the current review capacity of the AI governance team. Seven submissions involve the use of third-party large language models with access to non-public personal information (NPPI), raising concerns under PIPEDA and internal data classification policy. Of these, three have been conditionally approved pending data residency confirmation from the vendor. Two use cases involving automated underwriting decision support have been escalated to the Model Risk Committee for independent review, as outputs may be relied upon in a manner that requires model validation under OSFI Guideline E-23. The Technology Risk function has recommended a temporary intake freeze on Tier 1 AI use cases until a formal AI risk framework, currently in draft, receives sign-off from the Chief Risk Officer and is socialized with the Audit Committee.
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── SECTION 7 BRIDGE LABEL ── -->
+  <div class="full-width" style="margin-bottom:-8px;">
+    <p style="font-size:10.5px;color:var(--slate);font-style:italic;letter-spacing:0.03em;">
+      &#8627;&nbsp; <strong style="color:var(--navy-mid);font-style:normal;">Management Focus</strong> &mdash; derived from current risk position above
+    </p>
+  </div>
+
+  <!-- ── SECTION 7: MANAGEMENT FOCUS ── -->
+  <div class="card full-width">
+    <div class="card-header">
+      <span class="section-num">07</span>
+      <h2>Management Focus &mdash; Priority Actions for Q2 2026</h2>
+    </div>
+    <div class="card-body">
+      <p class="section-intro">Actions identified by the Technology Risk function as requiring senior management prioritization in the coming quarter. Owners and target dates to be confirmed at the next Technology Risk Committee.</p>
+      <div class="action-list">
+
+        <div class="action-item priority-high">
+          <div class="action-num">1</div>
+          <div class="action-body">
+            <div class="action-title">Remediate privileged access management exceptions — 14 violations vs. &lt;5 threshold</div>
+            <div class="action-detail">PAM policy breaches have increased for two consecutive quarters and are materially outside appetite. A root-cause review is required before the next internal audit cycle commences. Continued non-compliance may attract regulatory attention under applicable ICFR obligations.</div>
+            <div class="action-owner">Suggested owner: CISO Office &nbsp;|&nbsp; Target: Q2 2026</div>
+          </div>
+          <div><span class="badge red">Urgent</span></div>
+        </div>
+
+        <div class="action-item priority-high">
+          <div class="action-num">2</div>
+          <div class="action-body">
+            <div class="action-title">Close open CSPM audit findings — 3 items overdue, Azure Policy exceptions undocumented</div>
+            <div class="action-detail">Cloud security posture management findings have remained open beyond agreed remediation dates. Undocumented policy exceptions represent a control gap relevant to ICFR reporting. External audit window opens Q3 2026 — closure required before that date.</div>
+            <div class="action-owner">Suggested owner: VP Cloud Engineering &nbsp;|&nbsp; Target: Q2 2026</div>
+          </div>
+          <div><span class="badge red">Urgent</span></div>
+        </div>
+
+        <div class="action-item priority-amber">
+          <div class="action-num">3</div>
+          <div class="action-body">
+            <div class="action-title">Complete Tier 1 vendor reassessments — 18% of critical vendors past due</div>
+            <div class="action-detail">Annual due diligence for critical third-party suppliers is running significantly behind schedule. Failure to complete assessments by end of Q2 maintains a breach of appetite and increases regulatory exposure if a vendor incident occurs without a current assessment on file.</div>
+            <div class="action-owner">Suggested owner: Third-Party Risk Function &nbsp;|&nbsp; Target: Q2 2026</div>
+          </div>
+          <div><span class="badge amber">Elevated</span></div>
+        </div>
+
+        <div class="action-item priority-amber">
+          <div class="action-num">4</div>
+          <div class="action-body">
+            <div class="action-title">Achieve MFA adoption target for privileged users — currently 97.3% vs. 99.0% threshold</div>
+            <div class="action-detail">Remaining privileged users without MFA enrolment represent a residual access risk. Identity reconciliation between HR directory and PAM tooling is in progress. Full population to be enrolled and verified ahead of Q2 access certification review.</div>
+            <div class="action-owner">Suggested owner: Identity &amp; Access Management Team &nbsp;|&nbsp; Target: April 2026</div>
+          </div>
+          <div><span class="badge amber">Elevated</span></div>
+        </div>
+
       </div>
     </div>
   </div>
