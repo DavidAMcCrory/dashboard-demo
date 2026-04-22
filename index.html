@@ -487,6 +487,19 @@
     color: var(--text-muted);
     margin-top: 3px;
   }
+  .time-tag {
+    display: inline-block;
+    background: #edf1f8;
+    border: 1px solid #c2cfe0;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--navy-mid);
+    padding: 1px 7px;
+    letter-spacing: 0.04em;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
 </style>
 </head>
 <body>
@@ -891,7 +904,7 @@
           <div class="action-body">
             <div class="action-title">Remediate privileged access management exceptions — 14 violations vs. &lt;5 threshold</div>
             <div class="action-detail">PAM policy breaches have increased for two consecutive quarters and are materially outside appetite. A root-cause review is required before the next internal audit cycle commences. Continued non-compliance may attract regulatory attention under applicable ICFR obligations.</div>
-            <div class="action-owner">Suggested owner: CISO Office &nbsp;|&nbsp; Target: Q2 2026</div>
+            <div class="action-owner">Suggested owner: CISO Office &nbsp;|&nbsp; Target: Q2 2026 <span class="time-tag">&#9201; Immediate</span></div>
           </div>
           <div><span class="badge red">Urgent</span></div>
         </div>
@@ -901,7 +914,7 @@
           <div class="action-body">
             <div class="action-title">Close open CSPM audit findings — 3 items overdue, Azure Policy exceptions undocumented</div>
             <div class="action-detail">Cloud security posture management findings have remained open beyond agreed remediation dates. Undocumented policy exceptions represent a control gap relevant to ICFR reporting. External audit window opens Q3 2026 — closure required before that date.</div>
-            <div class="action-owner">Suggested owner: VP Cloud Engineering &nbsp;|&nbsp; Target: Q2 2026</div>
+            <div class="action-owner">Suggested owner: VP Cloud Engineering &nbsp;|&nbsp; Target: Q2 2026 <span class="time-tag">&#128197; Pre-audit closure required</span></div>
           </div>
           <div><span class="badge red">Urgent</span></div>
         </div>
