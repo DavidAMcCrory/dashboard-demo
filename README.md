@@ -18,7 +18,7 @@ The content is drawn from real-world enterprise risk management practice:
 - **Third-Party Risk** — vendor portfolio stats and highlighted exceptions requiring management attention
 - **Emerging Risk (AI & Technology)** — AI use case governance metrics and a narrative risk assessment referencing PIPEDA, OSFI Guideline E-23, and model risk considerations
 
-This reflects hands-on familiarity with how technology risk is communicated in regulated financial services environments (insurance, banking).
+This reflects hands-on familiarity with how technology risk is communicated in regulated financial services environments (insurance, banking). Includes prioritization and time-bound management actions aligned to audit and remediation cycles.
 
 ### Front-end craft — no frameworks, no dependencies
 The dashboard is intentionally built without any JavaScript libraries, CSS frameworks, or build tools — just a single `index.html` file. This demonstrates:
