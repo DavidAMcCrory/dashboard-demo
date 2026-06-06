@@ -47,3 +47,12 @@ It shows the ability to translate domain expertise into a polished, self-contain
 ## Author
 
 David McCrory — [github.com/DavidAMcCrory](https://github.com/DavidAMcCrory)
+
+---
+
+## Portfolio Demo Notice
+
+This repository is a public portfolio demonstration. Dashboard data, incidents, vendors, metrics, and management actions are synthetic examples and are not connected to production systems or real employer/client environments.
+
+No secrets or credentials are intended to be stored in this repository.
+
