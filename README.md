@@ -2,7 +2,7 @@
 
 A single-page executive dashboard built from scratch in pure HTML and CSS, designed to replicate the kind of reporting artefact a Technology Risk or GRC function would present to senior leadership or a Board committee.
 
-**Live demo:** [DavidAMcCrory/dashboard-demo](https://github.com/DavidAMcCrory/dashboard-demo)
+**Live demo:** [davidamccrory.github.io/dashboard-demo](https://davidamccrory.github.io/dashboard-demo/) &nbsp;|&nbsp; **Source:** [DavidAMcCrory/dashboard-demo](https://github.com/DavidAMcCrory/dashboard-demo)
 
 ---
 
@@ -16,7 +16,7 @@ The content is drawn from real-world enterprise risk management practice:
 - **Control Effectiveness** — segmented bar visualisation of control testing results across IAM, Change Management, and Backup & Recovery domains
 - **Issues & Audit Management** — open issue register with severity classification, ownership, and overdue tracking
 - **Third-Party Risk** — vendor portfolio stats and highlighted exceptions requiring management attention
-- **Emerging Risk (AI & Technology)** — AI use case governance metrics and a narrative risk assessment referencing PIPEDA, OSFI Guideline E-23, and model risk considerations
+- **Emerging Risk (AI & Technology)** — AI use case governance metrics and a narrative risk assessment covering model risk, prompt injection, agent tool permissions, runtime monitoring, and AI incident readiness, referencing PIPEDA, OSFI Guideline E-23, NIST AI RMF, and ISO/IEC 42001
 
 This reflects hands-on familiarity with how technology risk is communicated in regulated financial services environments (insurance, banking). Includes prioritization and time-bound management actions aligned to audit and remediation cycles.
 
@@ -27,7 +27,8 @@ The dashboard is intentionally built without any JavaScript libraries, CSS frame
 - **CSS Grid** for the two-column responsive layout and full-width card spans
 - **Semantic HTML** with appropriate use of `<table>`, `<header>`, `<footer>`, and sectioned card components
 - **Visual hierarchy** — typography scale, colour-coded status badges (RAG), progress bar segments, and stat boxes communicate information density without clutter
-- **Print-ready styling** approach — fixed header/footer chrome, contained card layout suitable for PDF export or screen presentation
+- **Print stylesheet** — a dedicated `@media print` layer keeps cards intact across page breaks so the artifact exports cleanly to PDF as a board-pack-style report
+- **Responsive layout** — a single mobile breakpoint collapses the grid to one column for phone viewing without altering the desktop board-pack presentation
 
 ---
 

@@ -32,12 +32,21 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    background: var(--bg);
+    background: #e4e9f1;
     color: var(--text);
     font-family: var(--font-ui);
-    font-size: 13px;
-    line-height: 1.55;
+    font-size: 14px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+  }
+
+  /* Centered board-pack sheet — caps line length on large monitors */
+  .page {
+    max-width: 1320px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: var(--bg);
+    box-shadow: 0 0 28px rgba(13, 31, 60, 0.10);
   }
 
   /* ── HEADER ── */
@@ -53,13 +62,13 @@
   }
   .header-left h1 {
     font-family: var(--font-main);
-    font-size: 22px;
+    font-size: 25px;
     font-weight: normal;
     letter-spacing: 0.02em;
     margin-bottom: 4px;
   }
   .header-left .period {
-    font-size: 11px;
+    font-size: 11.5px;
     color: #a8c4d8;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -68,18 +77,18 @@
   .exec-summary {
     background: rgba(255,255,255,0.07);
     border-left: 3px solid #4a90c4;
-    padding: 10px 14px;
-    font-size: 12px;
+    padding: 13px 17px;
+    font-size: 13.5px;
     color: #c8daea;
-    max-width: 680px;
-    line-height: 1.6;
+    max-width: 760px;
+    line-height: 1.7;
   }
   .posture-box {
     text-align: center;
-    min-width: 140px;
+    min-width: 150px;
   }
   .posture-label {
-    font-size: 10px;
+    font-size: 10.5px;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: #8daecb;
@@ -99,17 +108,17 @@
   .posture-badge.red   { background: var(--red-bg); color: var(--red); border: 1.5px solid var(--red-border); }
   .posture-note {
     margin-top: 8px;
-    font-size: 10px;
+    font-size: 11px;
     color: #8daecb;
     line-height: 1.5;
   }
 
   /* ── LAYOUT ── */
   .main {
-    padding: 28px 40px 40px;
+    padding: 32px 44px 48px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 26px;
   }
   .full-width { grid-column: 1 / -1; }
 
@@ -123,31 +132,31 @@
   .card-header {
     background: var(--navy);
     color: #fff;
-    padding: 9px 16px;
+    padding: 11px 18px;
     display: flex;
     align-items: center;
     gap: 10px;
   }
   .card-header h2 {
     font-family: var(--font-ui);
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
   .card-header .section-num {
-    font-size: 10px;
+    font-size: 10.5px;
     color: #6a8ab0;
     font-weight: 400;
   }
-  .card-body { padding: 16px; }
+  .card-body { padding: 20px; }
 
   /* ── STATUS BADGES ── */
   .badge {
     display: inline-block;
-    padding: 2px 10px;
+    padding: 3px 10px;
     border-radius: 2px;
-    font-size: 10px;
+    font-size: 10.5px;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -161,15 +170,15 @@
   .appetite-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 14px;
   }
   .appetite-item {
     border: 1px solid var(--border);
     border-radius: 3px;
-    padding: 11px 13px;
+    padding: 14px 16px;
     display: flex;
     align-items: flex-start;
-    gap: 10px;
+    gap: 12px;
   }
   .appetite-item .dot {
     width: 10px;
@@ -182,30 +191,30 @@
   .dot.amber { background: var(--amber); }
   .dot.red   { background: #c0392b; }
   .appetite-item .ai-label {
-    font-size: 11px;
+    font-size: 12.5px;
     font-weight: 600;
     color: var(--navy-mid);
-    margin-bottom: 2px;
-  }
-  .appetite-item .ai-status {
-    font-size: 10px;
-    color: var(--text-muted);
     margin-bottom: 4px;
   }
+  .appetite-item .ai-status {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
   .appetite-item .ai-note {
-    font-size: 10px;
+    font-size: 11.5px;
     color: var(--slate);
     font-style: italic;
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
   /* ── KRI TABLE ── */
   table { width: 100%; border-collapse: collapse; }
   thead tr { background: #f5f7fa; }
   th {
-    padding: 7px 10px;
+    padding: 9px 12px;
     text-align: left;
-    font-size: 10px;
+    font-size: 10.5px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -213,8 +222,8 @@
     border-bottom: 1.5px solid var(--border);
   }
   td {
-    padding: 8px 10px;
-    font-size: 11.5px;
+    padding: 11px 12px;
+    font-size: 12.5px;
     border-bottom: 1px solid #eaecf2;
     vertical-align: middle;
     color: var(--text);
@@ -226,15 +235,17 @@
     display: inline-flex;
     align-items: center;
     gap: 3px;
-    font-size: 11px;
+    font-size: 11.5px;
     font-weight: 600;
   }
   .trend.up    { color: #c0392b; }
   .trend.down  { color: var(--green); }
   .trend.stable{ color: var(--slate-light); }
+  /* Rising value that is good news (e.g. adoption rates) — green despite the up arrow */
+  .trend.up-good { color: var(--green); }
 
   /* ── CONTROL EFFECTIVENESS ── */
-  .control-grid { display: flex; flex-direction: column; gap: 13px; }
+  .control-grid { display: flex; flex-direction: column; gap: 16px; }
   .control-domain { }
   .control-domain .cd-header {
     display: flex;
@@ -242,10 +253,10 @@
     align-items: center;
     margin-bottom: 5px;
   }
-  .cd-name { font-size: 12px; font-weight: 600; color: var(--navy-mid); }
-  .cd-result { font-size: 10px; color: var(--text-muted); }
+  .cd-name { font-size: 13px; font-weight: 600; color: var(--navy-mid); }
+  .cd-result { font-size: 11px; color: var(--text-muted); }
   .bar-track {
-    height: 8px;
+    height: 10px;
     background: #e8ecf2;
     border-radius: 2px;
     overflow: hidden;
@@ -267,7 +278,7 @@
     padding-top: 12px;
     border-top: 1px solid var(--border);
   }
-  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--slate); }
+  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--slate); }
   .legend-dot { width: 9px; height: 9px; border-radius: 1px; flex-shrink: 0; }
 
   /* ── SUMMARY STATS ── */
@@ -276,17 +287,17 @@
     flex: 1;
     border: 1px solid var(--border);
     border-radius: 3px;
-    padding: 12px 14px;
+    padding: 14px 16px;
     text-align: center;
   }
   .stat-box .stat-num {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 700;
     line-height: 1;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
   }
   .stat-box .stat-lbl {
-    font-size: 10px;
+    font-size: 10.5px;
     text-transform: uppercase;
     letter-spacing: 0.07em;
     color: var(--text-muted);
@@ -297,13 +308,13 @@
 
   /* ── ISSUES TABLE ── */
   .overdue-tag {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 700;
     color: var(--red);
   }
-  .sev-high   { color: var(--red); font-weight: 700; font-size: 10.5px; }
-  .sev-medium { color: var(--amber); font-weight: 700; font-size: 10.5px; }
-  .sev-low    { color: #3b7a57; font-weight: 600; font-size: 10.5px; }
+  .sev-high   { color: var(--red); font-weight: 700; font-size: 11px; }
+  .sev-medium { color: var(--amber); font-weight: 700; font-size: 11px; }
+  .sev-low    { color: #3b7a57; font-weight: 600; font-size: 11px; }
 
   /* ── THIRD-PARTY RISK ── */
   .tp-stats { display: flex; gap: 12px; margin-bottom: 14px; }
@@ -315,22 +326,22 @@
     padding: 10px 12px;
     text-align: center;
   }
-  .tp-stat .tp-num { font-size: 22px; font-weight: 700; color: var(--navy-mid); line-height: 1; margin-bottom: 3px; }
-  .tp-stat .tp-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); }
+  .tp-stat .tp-num { font-size: 24px; font-weight: 700; color: var(--navy-mid); line-height: 1; margin-bottom: 4px; }
+  .tp-stat .tp-lbl { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); }
   .tp-stat .tp-num.warn { color: var(--amber); }
   .tp-stat .tp-num.danger { color: var(--red); }
 
   .vendor-highlight {
     border: 1px solid var(--border);
     border-radius: 3px;
-    padding: 10px 13px;
-    margin-bottom: 8px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
     border-left: 3px solid;
   }
   .vendor-highlight.amber { border-left-color: var(--amber); }
   .vendor-highlight.red   { border-left-color: #c0392b; }
-  .vendor-highlight .vh-name { font-size: 11.5px; font-weight: 700; color: var(--navy-mid); margin-bottom: 3px; }
-  .vendor-highlight .vh-desc { font-size: 11px; color: var(--slate); line-height: 1.5; }
+  .vendor-highlight .vh-name { font-size: 12.5px; font-weight: 700; color: var(--navy-mid); margin-bottom: 4px; }
+  .vendor-highlight .vh-desc { font-size: 12px; color: var(--slate); line-height: 1.6; }
 
   /* ── EMERGING RISK ── */
   .ai-stats { display: flex; gap: 12px; margin-bottom: 14px; }
@@ -342,15 +353,15 @@
     text-align: center;
     background: #f5f7fa;
   }
-  .ai-stat .ai-num { font-size: 22px; font-weight: 700; color: var(--navy-mid); line-height: 1; margin-bottom: 3px; }
-  .ai-stat .ai-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); }
+  .ai-stat .ai-num { font-size: 24px; font-weight: 700; color: var(--navy-mid); line-height: 1; margin-bottom: 4px; }
+  .ai-stat .ai-lbl { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); }
   .narrative {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--slate);
-    line-height: 1.7;
+    line-height: 1.75;
     border-top: 1px solid var(--border);
-    padding-top: 12px;
-    margin-top: 4px;
+    padding-top: 14px;
+    margin-top: 6px;
   }
   .narrative strong { color: var(--navy-mid); font-weight: 600; }
 
@@ -360,7 +371,7 @@
     color: var(--amber);
     border: 1px solid var(--amber-border);
     border-radius: 2px;
-    font-size: 10px;
+    font-size: 10.5px;
     font-weight: 700;
     padding: 2px 8px;
     text-transform: uppercase;
@@ -376,7 +387,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 10.5px;
+    font-size: 11.5px;
     border-top: 2px solid var(--navy-light);
   }
   .footer span { letter-spacing: 0.04em; }
@@ -385,7 +396,7 @@
     border: 1px solid #2c4a6e;
     border-radius: 2px;
     padding: 3px 10px;
-    font-size: 10px;
+    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: #b8cedd;
@@ -399,9 +410,9 @@
   }
 
   .section-intro {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-muted);
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     font-style: italic;
   }
 
@@ -409,38 +420,50 @@
   .positioning-banner {
     background: #eef2f8;
     border-bottom: 1px solid #c8d3e6;
-    padding: 6px 40px;
+    padding: 12px 44px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
   }
+  .positioning-banner .pos-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
   .positioning-banner .pos-main {
-    font-size: 11px;
+    font-size: 12px;
     color: #2a3f5e;
     font-style: italic;
+    line-height: 1.6;
+  }
+  .positioning-banner .pos-punch {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy-mid);
   }
   .positioning-banner .pos-context {
-    font-size: 10px;
+    font-size: 11px;
     color: #6a7e96;
     text-align: right;
-    white-space: nowrap;
+    max-width: 240px;
     flex-shrink: 0;
+    line-height: 1.5;
   }
 
   /* ── DATA CAVEAT ── */
   .data-caveat {
     display: block;
-    font-size: 10px;
+    font-size: 11px;
     color: #7a6a3a;
     font-style: italic;
-    margin-top: 2px;
+    margin-top: 3px;
   }
   .kri-footnote {
-    margin-top: 10px;
-    padding-top: 8px;
+    margin-top: 12px;
+    padding-top: 10px;
     border-top: 1px solid var(--border);
-    font-size: 10px;
+    font-size: 11px;
     color: var(--text-muted);
     font-style: italic;
   }
@@ -449,14 +472,14 @@
   .action-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     margin-top: 4px;
   }
   .action-item {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    padding: 10px 13px;
+    gap: 14px;
+    padding: 13px 16px;
     border: 1px solid var(--border);
     border-radius: 3px;
     border-left: 3px solid;
@@ -472,27 +495,27 @@
   }
   .action-body { flex: 1; }
   .action-title {
-    font-size: 11.5px;
+    font-size: 12.5px;
     font-weight: 600;
     color: var(--navy-mid);
-    margin-bottom: 2px;
+    margin-bottom: 3px;
   }
   .action-detail {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--slate);
-    line-height: 1.5;
+    line-height: 1.6;
   }
   .action-owner {
-    font-size: 10px;
+    font-size: 11px;
     color: var(--text-muted);
-    margin-top: 3px;
+    margin-top: 4px;
   }
   .time-tag {
     display: inline-block;
     background: #edf1f8;
     border: 1px solid #c2cfe0;
     border-radius: 2px;
-    font-size: 10px;
+    font-size: 10.5px;
     font-weight: 600;
     color: var(--navy-mid);
     padding: 1px 7px;
@@ -500,12 +523,65 @@
     margin-left: 6px;
     vertical-align: middle;
   }
+
+  /* ── PORTFOLIO CALLOUTS ── */
+  .demonstrates {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    font-size: 11px;
+    color: var(--slate-light);
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .demonstrates strong {
+    color: var(--slate);
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .cadence-note {
+    margin-top: 10px;
+    font-size: 11.5px;
+    color: #8daecb;
+    font-style: italic;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    .main { grid-template-columns: 1fr; padding: 18px 16px 28px; gap: 18px; }
+    .card-body { overflow-x: auto; }
+    .header { grid-template-columns: 1fr; padding: 20px 16px 18px; }
+    .posture-box { text-align: left; }
+    .positioning-banner { flex-direction: column; align-items: flex-start; gap: 8px; padding: 10px 16px; }
+    .positioning-banner .pos-context { text-align: left; max-width: none; }
+    .appetite-grid { grid-template-columns: 1fr; }
+    .stat-row, .tp-stats, .ai-stats { flex-wrap: wrap; }
+    .stat-box, .tp-stat, .ai-stat { flex: 1 1 40%; }
+    .footer { flex-direction: column; gap: 6px; text-align: center; padding: 12px 16px; }
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: #fff; font-size: 11px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { max-width: none; box-shadow: none; background: #fff; min-height: 0; }
+    .main { padding: 16px 0 0; gap: 14px; }
+    .header, .footer { padding-left: 0; padding-right: 0; }
+    .positioning-banner { padding: 6px 0; }
+    .card { break-inside: avoid; page-break-inside: avoid; }
+    tbody tr:hover { background: transparent; }
+    .demonstrates { display: none; } /* portfolio annotations are screen-only; print stays in-character as a board pack */
+  }
 </style>
 </head>
 <body>
+<div class="page">
 
 <div class="positioning-banner">
-  <span class="pos-main">Executive-level reporting framework integrating KRIs, control effectiveness, and audit findings to support ICFR oversight, audit follow-up, and remediation tracking.</span>
+  <div class="pos-text">
+    <span class="pos-main">This dashboard is a portfolio demonstration of executive technology risk reporting concepts informed by practical experience in enterprise technology risk management, IT audit, cybersecurity governance, third-party risk oversight, and AI governance. The metrics are illustrative; the reporting structure, escalation logic, and governance concepts reflect real-world practices used in large organizations.</span>
+    <span class="pos-punch">All data is synthetic; the judgment behind it is real.</span>
+  </div>
   <span class="pos-context">Developed from experience building enterprise technology risk reporting within a large pension investment environment</span>
 </div>
 
@@ -515,14 +591,15 @@
     <h1>Enterprise Technology Risk Dashboard</h1>
     <div style="margin-top:12px;">
       <div class="exec-summary">
-        The enterprise technology risk profile remains <strong style="color:#f6cc6a;">Amber</strong> for Q1 2026, driven by elevated third-party concentration risk and outstanding remediation activities in privileged access management. Cybersecurity controls are operating within appetite; however, three audit findings related to cloud configuration governance remain open beyond target resolution dates.
+        The enterprise technology risk profile remains <strong style="color:#f6cc6a;">Amber</strong> for Q1 2026, driven by elevated third-party concentration risk, outstanding remediation activities in privileged access management, and AI use case intake volumes outpacing governance review capacity. Cybersecurity controls are operating within appetite; however, three audit findings related to cloud configuration governance remain open beyond target resolution dates.
       </div>
+      <div class="cadence-note">Designed for monthly Technology Risk Committee review, with quarterly summary reporting to Audit &amp; Risk Committee.</div>
     </div>
   </div>
   <div class="posture-box">
     <div class="posture-label">Overall Risk Posture</div>
     <div class="posture-badge amber">&#9679;&nbsp; Amber</div>
-    <div class="posture-note">2 domains outside appetite<br>Board notification not required</div>
+    <div class="posture-note">3 domains outside appetite<br>Board notification not required</div>
   </div>
 </header>
 
@@ -566,10 +643,11 @@
         </div>
 
         <div class="appetite-item">
-          <div class="dot green"></div>
+          <div class="dot amber"></div>
           <div>
             <div class="ai-label">AI / Emerging Technology Risk</div>
-            <div class="ai-status">Status: <span class="badge green">Within Appetite</span></div>
+            <div class="ai-status">Status: <span class="badge amber">Outside Appetite</span></div>
+            <div class="ai-note">Use case intake volume outpacing review capacity. Temporary Tier 1 intake freeze recommended as a mitigant pending AI risk framework sign-off.</div>
           </div>
         </div>
 
@@ -664,12 +742,20 @@
             <td>MFA adoption — privileged users<span class="data-caveat">&#9432; Privileged user population count under reconciliation — HR directory sync in progress</span></td>
             <td><strong>97.3%</strong></td>
             <td>&gt; 99.0%</td>
-            <td><span class="trend down">▼ Improving</span></td>
+            <td><span class="trend up-good">▲ Improving</span></td>
+            <td><span class="badge amber">Amber</span></td>
+          </tr>
+          <tr>
+            <td>GenAI use cases with human-in-the-loop controls verified</td>
+            <td><strong>88%</strong></td>
+            <td>&gt; 95%</td>
+            <td><span class="trend up-good">▲ Improving</span></td>
             <td><span class="badge amber">Amber</span></td>
           </tr>
         </tbody>
       </table>
       <p class="kri-footnote">&#9432; Indicators marked with a caveat note are based on preliminary data. Final figures subject to confirmation by control owners. Dashboard refreshed as at March 30, 2026.</p>
+      <p class="demonstrates"><strong>What this demonstrates:</strong> leading-indicator design, risk appetite thresholds, trend monitoring, and transparent data-quality caveats.</p>
     </div>
   </div>
 
@@ -693,7 +779,7 @@
             <div class="bar-seg bar-partial"      style="width:24%"></div>
             <div class="bar-seg bar-ineffective"  style="width:10%"></div>
           </div>
-          <div style="display:flex;justify-content:space-between;margin-top:4px;font-size:10px;color:var(--text-muted);">
+          <div style="display:flex;justify-content:space-between;margin-top:5px;font-size:11px;color:var(--text-muted);">
             <span>Effective: 66%</span><span>Partial: 24%</span><span>Ineffective: 10%</span>
           </div>
         </div>
@@ -708,7 +794,7 @@
             <div class="bar-seg bar-partial"      style="width:17%"></div>
             <div class="bar-seg bar-ineffective"  style="width:4%"></div>
           </div>
-          <div style="display:flex;justify-content:space-between;margin-top:4px;font-size:10px;color:var(--text-muted);">
+          <div style="display:flex;justify-content:space-between;margin-top:5px;font-size:11px;color:var(--text-muted);">
             <span>Effective: 79%</span><span>Partial: 17%</span><span>Ineffective: 4%</span>
           </div>
         </div>
@@ -723,7 +809,7 @@
             <div class="bar-seg bar-partial"      style="width:10%"></div>
             <div class="bar-seg bar-ineffective"  style="width:3%"></div>
           </div>
-          <div style="display:flex;justify-content:space-between;margin-top:4px;font-size:10px;color:var(--text-muted);">
+          <div style="display:flex;justify-content:space-between;margin-top:5px;font-size:11px;color:var(--text-muted);">
             <span>Effective: 87%</span><span>Partial: 10%</span><span>Ineffective: 3%</span>
           </div>
         </div>
@@ -802,6 +888,7 @@
           </tr>
         </tbody>
       </table>
+      <p class="demonstrates"><strong>What this demonstrates:</strong> remediation governance, ownership accountability, aging analysis, and overdue escalation.</p>
     </div>
   </div>
 
@@ -827,11 +914,11 @@
         </div>
         <div class="tp-stat">
           <div class="tp-num danger">23%</div>
-          <div class="tp-lbl">% High Risk</div>
+          <div class="tp-lbl">% of Tier 1 High Risk</div>
         </div>
       </div>
 
-      <p style="font-size:11px;color:var(--text-muted);margin-bottom:10px;font-style:italic;">Vendor risks requiring management attention:</p>
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:10px;font-style:italic;">Vendor risks requiring management attention:</p>
 
       <div class="vendor-highlight red">
         <div class="vh-name">Apex Data Services Inc. &nbsp;<span class="badge red">High Risk</span></div>
@@ -842,6 +929,7 @@
         <div class="vh-name">GlobalNet Communications &nbsp;<span class="badge amber">Elevated</span></div>
         <div class="vh-desc">Subcontractor usage increased beyond original contract scope without Technology Risk approval. Concentration risk flagged — two additional carriers now handling network failover traffic.</div>
       </div>
+      <p class="demonstrates"><strong>What this demonstrates:</strong> vendor concentration oversight, tiering logic, risk acceptance, and board-level escalation discipline.</p>
     </div>
   </div>
 
@@ -871,20 +959,21 @@
         </div>
       </div>
 
-      <p style="font-size:11px;color:var(--text-muted);margin-bottom:6px;">
-        Primary concern areas: <span class="concern-tag">Model Risk</span> <span class="concern-tag">Data Exposure</span> <span class="concern-tag">Explainability</span>
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:6px;line-height:2.1;">
+        Primary concern areas: <span class="concern-tag">Model Risk</span> <span class="concern-tag">Data Exposure</span> <span class="concern-tag">Prompt Injection</span> <span class="concern-tag">Agent Tool Permissions</span> <span class="concern-tag">Third-Party Model Dependency</span>
       </p>
 
       <div class="narrative">
-        <strong>Risk function assessment:</strong> The volume of AI use case submissions has increased 40% quarter-over-quarter, outpacing the current review capacity of the AI governance team. Seven synthetic submissions involve third-party large language models with access to sensitive sample data, raising concerns under PIPEDA and data classification expectations. Of these, three have been conditionally approved pending data residency confirmation from the vendor. Two use cases involving automated underwriting decision support have been escalated to the Model Risk Committee for independent review, as outputs may be relied upon in a manner that requires model validation under OSFI Guideline E-23. The Technology Risk function has recommended a temporary intake freeze on Tier 1 AI use cases until a formal AI risk framework, currently in draft, receives sign-off from the Chief Risk Officer and is socialized with the Audit Committee.
+        <strong>Risk function assessment:</strong> The volume of AI use case submissions has increased 40% quarter-over-quarter, outpacing the current review capacity of the AI governance team. Seven submitted use cases involve third-party large language models with access to sensitive data classes, raising concerns under PIPEDA and data classification expectations; three have been conditionally approved pending data residency confirmation from the vendor. Two use cases involving automated underwriting decision support have been escalated to the Model Risk Committee for independent review, as outputs may be relied upon in a manner that requires model validation under OSFI Guideline E-23. Runtime monitoring of approved generative AI use cases identified four policy violations this quarter — primarily attempted prompt-injection and data-handling deviations — all contained without data exposure; agent tool permissions are being narrowed in response. The Technology Risk function has recommended a temporary intake freeze on Tier 1 AI use cases until a formal AI risk framework, currently in draft with control mapping to NIST AI RMF and ISO/IEC 42001, receives sign-off from the Chief Risk Officer and is socialized with the Audit Committee. An AI-specific incident response annex covering model rollback, output containment, and vendor notification is in draft alongside the framework.
       </div>
+      <p class="demonstrates"><strong>What this demonstrates:</strong> AI intake governance, model oversight, regulatory alignment, runtime monitoring, and emerging-risk assessment.</p>
     </div>
   </div>
 
 
   <!-- ── SECTION 7 BRIDGE LABEL ── -->
   <div class="full-width" style="margin-bottom:-8px;">
-    <p style="font-size:10.5px;color:var(--slate);font-style:italic;letter-spacing:0.03em;">
+    <p style="font-size:11.5px;color:var(--slate);font-style:italic;letter-spacing:0.03em;">
       &#8627;&nbsp; <strong style="color:var(--navy-mid);font-style:normal;">Management Focus</strong> &mdash; derived from current risk position above
     </p>
   </div>
@@ -953,5 +1042,7 @@
   <span>Last updated: March 30, 2026</span>
 </footer>
 
+</div>
+<!-- end page -->
 </body>
 </html>
